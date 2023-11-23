@@ -193,22 +193,16 @@ In the xv6 operating system, a process can be in one of the following states:
 
 ###### Q13
 
-1. **Superblock:**
-   * Role: Stores key metadata about the file system, such as the total number of blocks and inodes.
-2. **Inode:**
-   * Role: Represents a file or directory and stores metadata like permissions, size, and pointers to data blocks.
-3. **Data blocks:**
-   * Role: Actual storage for file content or directory entries.
-4. **Directory entry:**
-   * Role: Maps human-readable file names to their corresponding inodes.
-5. **Bitmaps:**
-   * Role: Track the allocation status of data blocks and inodes, indicating which ones are in use.
-6. **File descriptor table:**
-   * Role: Maintains information about open files for a process, including the current file offset.
-7. **Log:**
-   * Role: Provides a way to recover the file system to a consistent state after a crash.
-8. **Cylinder groups:**
-   * Role: Organize the disk space into manageable groups for efficiency and parallelism in file system operations.
+* **Directory:** Represents a container for filenames and corresponding inode numbers, mapping human-readable names to file metadata.
+* **Inode:** An index node storing metadata for a file, including permissions, size, and pointers to data blocks.
+
+* **Logging:** A mechanism to log file system changes, enabling recovery to a consistent state after a crash.
+* **Buffer Cache:** Temporary storage for frequently accessed disk blocks, reducing the need for repeated disk reads.
+
+* **Pathname:** A string specifying the location of a file or directory in the file system hierarchy.
+* **File Descriptor:** An index or pointer to the file table entry, managing open files for a process.
+
+* **Disk:** Physical storage containing file system data structures, inodes, data blocks, and directories.
 
 ###### Q14
 
